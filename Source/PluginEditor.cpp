@@ -32,28 +32,23 @@ MultibandSaturationAudioProcessorEditor::MultibandSaturationAudioProcessorEditor
 	(*dropdownLowType).addListener(this);
 
 	addAndMakeVisible(sliderLowPreGain = new Slider("Low PreGain Slider"));
-	(*sliderLowPreGain).setRange(0, 10, 0);
+	(*sliderLowPreGain).setRange(0, 30000, 1);
 	(*sliderLowPreGain).setSliderStyle(Slider::Rotary);
-	(*sliderLowPreGain).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderLowPreGain).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderLowPreGain).addListener(this);
+	(*sliderLowPreGain).setSkewFactor(0.2);
 
 	addAndMakeVisible(sliderLowPostGain = new Slider("Low PostGain Slider"));
-	(*sliderLowPostGain).setRange(0, 10, 0);
+	(*sliderLowPostGain).setRange(0, 20, 0.01);
 	(*sliderLowPostGain).setSliderStyle(Slider::Rotary);
-	(*sliderLowPostGain).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderLowPostGain).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderLowPostGain).addListener(this);
 
 	addAndMakeVisible(sliderLowBlend = new Slider("Low Blend Slider"));
-	(*sliderLowBlend).setRange(0, 1, 0);
+	(*sliderLowBlend).setRange(0, 1, 0.01);
 	(*sliderLowBlend).setSliderStyle(Slider::Rotary);
-	(*sliderLowBlend).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderLowBlend).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderLowBlend).addListener(this);
-
-	addAndMakeVisible(sliderLowRange = new Slider("Low Range Slider"));
-	(*sliderLowRange).setRange(0, 3000, 0);
-	(*sliderLowRange).setSliderStyle(Slider::Rotary);
-	(*sliderLowRange).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
-	(*sliderLowRange).addListener(this);
 
 	// Mid Band Knobs
 	addAndMakeVisible(dropdownMidType = new ComboBox("Mid Saturation Type Menu"));
@@ -63,28 +58,23 @@ MultibandSaturationAudioProcessorEditor::MultibandSaturationAudioProcessorEditor
 	(*dropdownMidType).addListener(this);
 
 	addAndMakeVisible(sliderMidPreGain = new Slider("Mid PreGain Slider"));
-	(*sliderMidPreGain).setRange(0, 10, 0);
+	(*sliderMidPreGain).setRange(0, 30000, 1);
 	(*sliderMidPreGain).setSliderStyle(Slider::Rotary);
-	(*sliderMidPreGain).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderMidPreGain).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderMidPreGain).addListener(this);
+	(*sliderMidPreGain).setSkewFactor(0.2);
 
 	addAndMakeVisible(sliderMidPostGain = new Slider("Mid PostGain Slider"));
-	(*sliderMidPostGain).setRange(0, 10, 0);
+	(*sliderMidPostGain).setRange(0, 20, 0.01);
 	(*sliderMidPostGain).setSliderStyle(Slider::Rotary);
-	(*sliderMidPostGain).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderMidPostGain).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderMidPostGain).addListener(this);
 
 	addAndMakeVisible(sliderMidBlend = new Slider("Mid Blend Slider"));
-	(*sliderMidBlend).setRange(0, 1, 0);
+	(*sliderMidBlend).setRange(0, 1, 0.01);
 	(*sliderMidBlend).setSliderStyle(Slider::Rotary);
-	(*sliderMidBlend).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderMidBlend).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderMidBlend).addListener(this);
-
-	addAndMakeVisible(sliderMidRange = new Slider("Mid Range Slider"));
-	(*sliderMidRange).setRange(0, 3000, 0);
-	(*sliderMidRange).setSliderStyle(Slider::Rotary);
-	(*sliderMidRange).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
-	(*sliderMidRange).addListener(this);
 
 	// High Band Knobs
 	addAndMakeVisible(dropdownHighType = new ComboBox("High Saturation Type Menu"));
@@ -94,44 +84,39 @@ MultibandSaturationAudioProcessorEditor::MultibandSaturationAudioProcessorEditor
 	(*dropdownHighType).addListener(this);
 
 	addAndMakeVisible(sliderHighPreGain = new Slider("High PreGain Slider"));
-	(*sliderHighPreGain).setRange(0, 10, 0);
+	(*sliderHighPreGain).setRange(0, 30000, 1);
 	(*sliderHighPreGain).setSliderStyle(Slider::Rotary);
-	(*sliderHighPreGain).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderHighPreGain).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderHighPreGain).addListener(this);
+	(*sliderHighPreGain).setSkewFactor(0.2);
 
 	addAndMakeVisible(sliderHighPostGain = new Slider("High PostGain Slider"));
-	(*sliderHighPostGain).setRange(0, 10, 0);
+	(*sliderHighPostGain).setRange(0, 20, 0.01);
 	(*sliderHighPostGain).setSliderStyle(Slider::Rotary);
-	(*sliderHighPostGain).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderHighPostGain).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderHighPostGain).addListener(this);
 
 	addAndMakeVisible(sliderHighBlend = new Slider("High Blend Slider"));
-	(*sliderHighBlend).setRange(0, 1, 0);
+	(*sliderHighBlend).setRange(0, 1, 0.01);
 	(*sliderHighBlend).setSliderStyle(Slider::Rotary);
-	(*sliderHighBlend).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
+	(*sliderHighBlend).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderHighBlend).addListener(this);
-
-	addAndMakeVisible(sliderHighRange = new Slider("High Range Slider"));
-	(*sliderHighRange).setRange(0, 3000, 0);
-	(*sliderHighRange).setSliderStyle(Slider::Rotary);
-	(*sliderHighRange).setTextBoxStyle(Slider::TextBoxBelow, true, 80, 20);
-	(*sliderHighRange).addListener(this);
 
 	// Low Cutoff Frequency Slider
 	addAndMakeVisible(sliderLowCutoff = new Slider("Low Cutoff"));
 	(*sliderLowCutoff).setRange(10, processor.getSampleRate() / 2, 0);
 	(*sliderLowCutoff).setSliderStyle(Slider::Rotary);
-	(*sliderLowCutoff).setTextBoxStyle(Slider::TextBoxBelow, false, 80, 20);
+	(*sliderLowCutoff).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderLowCutoff).addListener(this);
-	(*sliderLowCutoff).setSkewFactor(2);
+	(*sliderLowCutoff).setSkewFactor(0.2);
 
 	// High Cutoff Frequency Slider
 	addAndMakeVisible(sliderHighCutoff = new Slider("High Cutoff"));
 	(*sliderHighCutoff).setRange(1, processor.getSampleRate() / 2, 0);
 	(*sliderHighCutoff).setSliderStyle(Slider::Rotary);
-	(*sliderHighCutoff).setTextBoxStyle(Slider::TextBoxBelow, false, 80, 20);
+	(*sliderHighCutoff).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderHighCutoff).addListener(this);
-	(*sliderHighCutoff).setSkewFactor(2);
+	(*sliderHighCutoff).setSkewFactor(0.2);
 
 	// Saturation State Buttons
 	addAndMakeVisible(buttonLowSaturationState = new TextButton("Low Saturation"));
@@ -190,16 +175,10 @@ MultibandSaturationAudioProcessorEditor::MultibandSaturationAudioProcessorEditor
 	(*blendLabel).setEditable(false, false, false);
 	(*blendLabel).setColour(Label::textColourId, Colours::white);
 
-	addAndMakeVisible(rangeLabel = new Label("Range", TRANS("Range:")));
-	(*rangeLabel).setFont(Font(15.00f, Font::plain));
-	(*rangeLabel).setJustificationType(Justification::centredLeft);
-	(*rangeLabel).setEditable(false, false, false);
-	(*rangeLabel).setColour(Label::textColourId, Colours::white);
-
 	addAndMakeVisible(sliderOverallGain = new Slider("Overall Gain"));
 	(*sliderOverallGain).setRange(0, 10, 0);
 	(*sliderOverallGain).setSliderStyle(Slider::Rotary);
-	(*sliderOverallGain).setTextBoxStyle(Slider::TextBoxBelow, false, 80, 20);
+	(*sliderOverallGain).setTextBoxStyle(Slider::TextBoxBelow, false, 40, 20);
 	(*sliderOverallGain).addListener(this);
 
 	addAndMakeVisible(overallGainLabel = new Label("OverallGain", TRANS("Overall Gain:")));
@@ -225,19 +204,16 @@ MultibandSaturationAudioProcessorEditor::~MultibandSaturationAudioProcessorEdito
 	sliderLowPreGain = nullptr;
 	sliderLowPostGain = nullptr;
 	sliderLowBlend = nullptr;
-	sliderLowRange = nullptr;
 
 	dropdownMidType = nullptr;
 	sliderMidPreGain = nullptr;
 	sliderMidPostGain = nullptr;
 	sliderMidBlend = nullptr;
-	sliderMidRange = nullptr;
 
 	dropdownHighType = nullptr;
 	sliderHighPreGain = nullptr;
 	sliderHighPostGain = nullptr;
 	sliderHighBlend = nullptr;
-	sliderHighRange = nullptr;
 
 	cutoffLabel = nullptr;
 	preGainLabel = nullptr;
@@ -284,28 +260,24 @@ void MultibandSaturationAudioProcessorEditor::resized()
 	(*preGainLabel).setBounds(16, 360, 72, 50);
 	(*postGainLabel).setBounds(16, 440, 72, 50);
 	(*blendLabel).setBounds(16, 520, 72, 50);
-	(*rangeLabel).setBounds(16, 600, 72, 50);
 
 	// Low Band Knobs
 	(*dropdownLowType).setBounds(120, 292, 80, 24);
 	(*sliderLowPreGain).setBounds(120, 340, 80, 64);
 	(*sliderLowPostGain).setBounds(120, 420, 80, 64);
 	(*sliderLowBlend).setBounds(120, 500, 80, 64);
-	(*sliderLowRange).setBounds(120, 580, 80, 64);
 
 	// Mid Band Knobs
 	(*dropdownMidType).setBounds(270, 292, 80, 24);
 	(*sliderMidPreGain).setBounds(270, 340, 80, 64);
 	(*sliderMidPostGain).setBounds(270, 420, 80, 64);
 	(*sliderMidBlend).setBounds(270, 500, 80, 64);
-	(*sliderMidRange).setBounds(270, 580, 80, 64);
 
 	// High Band Knobs
 	(*dropdownHighType).setBounds(420, 292, 80, 24);
 	(*sliderHighPreGain).setBounds(420, 340, 80, 64);
 	(*sliderHighPostGain).setBounds(420, 420, 80, 64);
 	(*sliderHighBlend).setBounds(420, 500, 80, 64);
-	(*sliderHighRange).setBounds(420, 580, 80, 64);
 
 	// Overall Gain
 	(*overallGainLabel).setBounds(520, 440, 88, 24);
@@ -339,8 +311,6 @@ void MultibandSaturationAudioProcessorEditor::sliderValueChanged(Slider* sliderT
 		processor.lowSaturation.setPostGain((float)(*sliderLowPostGain).getValue());
 	else if (sliderThatWasMoved == sliderLowBlend)
 		processor.lowSaturation.setBlend((float)(*sliderLowBlend).getValue());
-	else if (sliderThatWasMoved == sliderLowRange)
-		processor.lowSaturation.setRange((float)(*sliderLowRange).getValue());
 
 	// Slider Changed Values for Mid Saturation
 	else if (sliderThatWasMoved == sliderMidPreGain)
@@ -349,8 +319,6 @@ void MultibandSaturationAudioProcessorEditor::sliderValueChanged(Slider* sliderT
 		processor.midSaturation.setPostGain((float)(*sliderMidPostGain).getValue());
 	else if (sliderThatWasMoved == sliderMidBlend)
 		processor.midSaturation.setBlend((float)(*sliderMidBlend).getValue());
-	else if (sliderThatWasMoved == sliderMidRange)
-		processor.midSaturation.setRange((float)(*sliderMidRange).getValue());
 
 	// Slider Changed Values for High Saturation
 	else if (sliderThatWasMoved == sliderHighPreGain)
@@ -359,8 +327,6 @@ void MultibandSaturationAudioProcessorEditor::sliderValueChanged(Slider* sliderT
 		processor.highSaturation.setPostGain((float)(*sliderHighPostGain).getValue());
 	else if (sliderThatWasMoved == sliderHighBlend)
 		processor.highSaturation.setBlend((float)(*sliderHighBlend).getValue());
-	else if (sliderThatWasMoved == sliderHighRange)
-		processor.highSaturation.setRange((float)(*sliderHighRange).getValue());
 
 	else if (sliderThatWasMoved == sliderOverallGain)
 		processor.setOverallGain((float)(*sliderOverallGain).getValue());
@@ -398,19 +364,16 @@ void MultibandSaturationAudioProcessorEditor::timerCallback() {
 	(*sliderLowPreGain).setValue(processor.lowSaturation.getPreGain());
 	(*sliderLowPostGain).setValue(processor.lowSaturation.getPostGain());
 	(*sliderLowBlend).setValue(processor.lowSaturation.getBlend());
-	(*sliderLowRange).setValue(processor.lowSaturation.getRange());
 
 	(*dropdownMidType).setSelectedId(processor.midSaturation.getSaturationType());
 	(*sliderMidPreGain).setValue(processor.midSaturation.getPreGain());
 	(*sliderMidPostGain).setValue(processor.midSaturation.getPostGain());
 	(*sliderMidBlend).setValue(processor.midSaturation.getBlend());
-	(*sliderMidRange).setValue(processor.midSaturation.getRange());
 
 	(*dropdownHighType).setSelectedId(processor.highSaturation.getSaturationType());
 	(*sliderHighPreGain).setValue(processor.highSaturation.getPreGain());
 	(*sliderHighPostGain).setValue(processor.highSaturation.getPostGain());
 	(*sliderHighBlend).setValue(processor.highSaturation.getBlend());
-	(*sliderHighRange).setValue(processor.highSaturation.getRange());
 
 	(*buttonLowSaturationState).setToggleState(processor.getLowSaturationState(), dontSendNotification);
 	(*buttonMidSaturationState).setToggleState(processor.getMidSaturationState(), dontSendNotification);

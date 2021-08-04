@@ -27,10 +27,6 @@
 //
 //};
 
-
-#include <string>
-#include <iostream>
-
 //==============================================================================
 template <typename SampleType>
 class AudioBufferQueue

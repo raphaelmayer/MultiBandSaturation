@@ -55,19 +55,18 @@ private:
 	ScopedPointer<Slider> sliderLowPreGain;
 	ScopedPointer<Slider> sliderLowPostGain;
 	ScopedPointer<Slider> sliderLowBlend;
-	ScopedPointer<Slider> sliderLowRange;
+
 	// Mid Saturation Sliders
 	ScopedPointer<ComboBox> dropdownMidType;
 	ScopedPointer<Slider> sliderMidPreGain;
 	ScopedPointer<Slider> sliderMidPostGain;
 	ScopedPointer<Slider> sliderMidBlend;
-	ScopedPointer<Slider> sliderMidRange;
+
 	// High Saturation Sliders
 	ScopedPointer<ComboBox> dropdownHighType;
 	ScopedPointer<Slider> sliderHighPreGain;
 	ScopedPointer<Slider> sliderHighPostGain;
 	ScopedPointer<Slider> sliderHighBlend;
-	ScopedPointer<Slider> sliderHighRange;
 
 	ScopedPointer<Slider> sliderOverallGain;
 
@@ -76,7 +75,6 @@ private:
 	ScopedPointer<Label> preGainLabel;
 	ScopedPointer<Label> postGainLabel;
 	ScopedPointer<Label> blendLabel;
-	ScopedPointer<Label> rangeLabel;
 	ScopedPointer<Label> overallGainLabel;
 	ScopedPointer<Label> cutoffLabel;
 
